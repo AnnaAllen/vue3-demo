@@ -1,7 +1,22 @@
 <script setup lang="ts">
+import { axios } from '@/server/axios'
+
 defineProps<{
   msg: string
 }>()
+
+
+interface Data {
+  data: {
+    name: string,
+    age: number,
+    // url: string,
+    desc: string
+  }
+}
+
+const { data } = await axios.get<Data>('./skeletonTestData.json')
+// console.log(data, 'data------');
 </script>
 
 <template>

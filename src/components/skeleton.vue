@@ -21,18 +21,18 @@
 
 <script setup lang="ts">
 import { ref, reactive} from 'vue'
-// import { axios } from '@/server/axios'
+import { axios } from '@/server/axios'
 
-// interface Data {
-//   data: {
-//     name: string,
-//     age: number,
-//     url: string,
-//     desc: string
-//   }
-// }
+interface Data {
+  data: {
+    name: string,
+    age: number,
+    url: string,
+    desc: string
+  }
+}
 
-// const { data } = await axios.get<Data>('./skeletonTestData.json')
-// // console.log(data, 'data------');
+const { data } = await axios.get<Data>('./skeletonTestData.json')
+// console.log(data, 'data------');
 
 </script>

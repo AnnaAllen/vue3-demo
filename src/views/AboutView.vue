@@ -1,10 +1,25 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    {{ userList }}
   </div>
 </template>
 
 <script setup lang="ts">
+  import { useTodos } from '@/stores/todos'
+  import  { storeToRefs } from 'pinia' 
+
+  // * 使用storeToRefs()保证从store提取属性的响应性
+  // * 可以直接从store解构action
+  const store = useTodos()
+  const { userList } = storeToRefs(store)
+  const { getUserDataList } = store
+  getUserDataList().then(() => {
+    console.log(userList.value, 'userList------');
+  }).catch(err => {
+    console.log(err, 'err--------');
+    
+  })
+  
 
 </script>
 

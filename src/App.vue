@@ -7,7 +7,12 @@
     <router-link to="/login">Go to Login | </router-link>
     <router-link to="/about">Go to About | </router-link>
     <router-link to="/test">Go to test | </router-link>
-    <router-link to="/use-vue">use-vue</router-link>
+    <router-link to="/use-vue">use-vue | </router-link>
+    <router-link to="/keep-alive">keep-alive | </router-link>
+    <!-- 组件间传值 -->
+    <router-link to="/provide-inject">provide-inject | </router-link>
+    <!-- 自定义指令 -->
+    <router-link to="/custom-directives">custom-directives | </router-link>
   </p>
   <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->

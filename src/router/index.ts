@@ -47,7 +47,28 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/use-vue.vue')
-    }
+    },
+    {
+      path: '/keep-alive',
+      name: 'keep-alive',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route 
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/keep-alive/index.vue')
+    },
+    {
+      path: '/provide-inject',
+      name: 'provide-inject',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/provide-inject/index.vue')
+    },
+    {
+      path: '/custom-directives',
+      name: 'custom-directives',
+      component: () => import('../views/custom-directives/index.vue')
+    },
   ]
 })
 

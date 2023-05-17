@@ -30,7 +30,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('@/views/AboutView.vue')
     },
     {
       path: '/test',
@@ -38,7 +38,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/test.vue')
+      component: () => import('@/views/test.vue')
     },
     {
       path: '/use-vue',
@@ -46,7 +46,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/use-vue.vue')
+      component: () => import('@/views/use-vue.vue')
     },
     {
       path: '/keep-alive',
@@ -54,7 +54,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route 
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/keep-alive/index.vue')
+      component: () => import('@/views/keep-alive/index.vue')
     },
     {
       path: '/provide-inject',
@@ -62,12 +62,17 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/provide-inject/index.vue')
+      component: () => import('@/views/provide-inject/index.vue')
     },
     {
       path: '/custom-directives',
       name: 'custom-directives',
-      component: () => import('../views/custom-directives/index.vue')
+      component: () => import('@/views/custom-directives/index.vue')
+    },
+    {
+      path: '/use-hook',
+      name: 'use-hook',
+      component: () => import('@/views/hooks/use-hooks.vue')
     },
   ]
 })

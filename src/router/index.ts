@@ -74,6 +74,11 @@ const router = createRouter({
       name: 'use-hook',
       component: () => import('@/views/hooks/use-hooks.vue')
     },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/test.vue')
+    },
   ]
 })
 

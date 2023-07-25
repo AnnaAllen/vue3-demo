@@ -17,7 +17,7 @@
     "element-plus": "^2.2.32",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
-    "node-sass": "^8.0.0",
+    "node-sass": "^6.0.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
@@ -42,5 +42,14 @@
     "vite": "^4.0.0",
     "vitest": "^0.25.6",
     "vue-tsc": "^1.0.12"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 115,
+    "proseWrap": "always",
+    "semi": false, 
+    "trailingComma": "none", 
+    "htmlWhitespaceSensitivity": "ignore" 
   }
+
 }

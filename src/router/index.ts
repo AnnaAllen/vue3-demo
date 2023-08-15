@@ -75,10 +75,16 @@ const router = createRouter({
       component: () => import('@/views/hooks/use-hooks.vue')
     },
     {
-      path: '/test',
-      name: 'test',
-      component: () => import('@/views/test.vue')
+      path: '/scroll-bar',
+      name: 'scroll-bar',
+      component: () => import('@/views/scroll-bar.vue')
     },
+    // 简单状态管理
+    {
+      path: '/simple-state',
+      name: 'simple-state',
+      component: () => import('@/views/simple-state/index.vue')
+    }
   ]
 })
 

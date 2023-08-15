@@ -5,20 +5,20 @@
     <el-radio-group v-model="activeRadio" @change="changeActiveRole">
       <el-radio v-for="item in roles" :key="item.id" :label="item.id">{{ item.name }}</el-radio>
     </el-radio-group>
-    <br>
+    <br />
     <aaa :setValue="setValue"></aaa>
-    <br>
+    <br />
     <bbb></bbb>
-    <br>
+    <br />
     <ccc></ccc>
-    <br>
-    <br>
+    <br />
+    <br />
 
     <div>使用prop和emit</div>
     <aaa @aValue="aValue" :setValue="setValue"></aaa>
     <div>从子组件中收到的值 {{ getValue }}</div>
-    <br>
-    <br>
+    <br />
+    <br />
 
     <div>使用全局挂载的事件总线</div>
     <el-input v-model="setValueBus"></el-input>
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, provide, inject, watch} from  'vue'
+import { ref, reactive, provide, inject, watch } from 'vue'
 import { getCurrentInstance } from 'vue'
 import aaa from '@/components/test/a.vue'
 import bbb from '@/components/test/b.vue'
@@ -51,18 +51,17 @@ const aValue = (val: string) => {
 // 把值传给子组件
 const setValue = ref('')
 
-
 // 单选的角色
 const activeRadio = ref<number>(1)
 
 interface roles {
-  name: string,
-  id: number,
+  name: string
+  id: number
   desc?: string
 }
 const roles = reactive<roles[]>([
   { name: 'Lili', id: 1 },
-  { name: 'Hiyori', id: 2}
+  { name: 'Hiyori', id: 2 }
 ])
 
 const name = ref<string | undefined>('')
@@ -72,7 +71,7 @@ const name = ref<string | undefined>('')
 // })
 
 const changeActiveRole = (val: number) => {
-  name.value = roles.find(item => item.id === val)?.name
+  name.value = roles.find((item) => item.id === val)?.name
 }
 
 // 选择角色后修改旗下的组件abc
@@ -81,14 +80,6 @@ const changeActiveRole = (val: number) => {
  * provide('name', readonly(name))
  */
 provide('name', name)
-
-
-
-
-
-
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

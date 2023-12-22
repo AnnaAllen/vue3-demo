@@ -84,6 +84,12 @@ const router = createRouter({
       path: '/simple-state',
       name: 'simple-state',
       component: () => import('@/views/simple-state/index.vue')
+    },
+    // 主题切换
+    {
+      path: '/theme-change',
+      name: 'theme-change',
+      component: () => import('@/views/theme-change/index.vue')
     }
   ]
 })

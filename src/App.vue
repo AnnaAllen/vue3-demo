@@ -19,6 +19,8 @@
     <router-link to="/scroll-bar">scroll-bar |</router-link>
     <!-- 简单状态管理 -->
     <router-link to="/simple-state">simple-state |</router-link>
+    <!-- 主题切换 -->
+    <router-link to="/theme-change">theme-change |</router-link>
   </p>
   <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->

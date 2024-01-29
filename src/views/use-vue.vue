@@ -1,19 +1,41 @@
 <template>
   <div>
-    <!-- 11111 -->
-    {{ isDark }}
+    Ask a yes/no question:
+    <input v-model="question" :disabled="loading" />
+    <p>{{ answer }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useLocalStorage, useMouse, usePreferredDark } from '@vueuse/core'
-const isDark = usePreferredDark()
-// console.log(isDark, 'isDark-------');
+import { ref, watch } from 'vue'
+const question = ref('')
+const answer = ref('Questions usually contain a question mark. ;-)')
+const loading = ref(false)
 
-const { x, y } = useMouse()
-console.log( x.value, y.value, 'useMouse------');
+watch(question, async (newVal, oldVal) => {
+  if(newVal.includes('?')) {
+    loading.value = true
+    answer.value = 'Thinking。。。'
+    try {
+      const res = await fetch('https://yesno.wtf/api')
+      answer.value = (await res.json()).answer
+    } catch (error) {
+      answer.value = 'error! could not reach the API.' + error
+    } finally {
+      loading.value = false
+    }
+  }
+})
 
+const x = ref(0)
+const y = ref(0)
 
+watch(x, newX => {})
+watch(
+  () => x.value + y.value,
+  (sum) => {}
+)
+watch([x, () => y.value], ([newX, newY]) => {})
 </script>
 
 <style lang="scss" scoped>

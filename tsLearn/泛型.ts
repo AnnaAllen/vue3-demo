@@ -38,24 +38,24 @@ class GenericNumber<T> {
 }
 let myGenericNumber = new GenericNumber<number>()
 myGenericNumber.zeroValue = 0
-myGenericNumber.add = function(x, y) { return x+y }
+myGenericNumber.add = function (x, y) { return x + y }
 
 let stringNumberic = new GenericNumber<string>()
 stringNumberic.zeroValue = ''
-stringNumberic.add = function(x, y) { return x+y }
+stringNumberic.add = function (x, y) { return x + y }
 console.log(stringNumberic.add(stringNumberic.zeroValue, "test"));
 
 // 泛型约束
 interface lengthwise {
   length: number
 }
-function loggingIdentity2<T extends lengthwise> (arg: T): T {
+function loggingIdentity2<T extends lengthwise>(arg: T): T {
   console.log(arg.length);
   return arg
 }
 
 // 在泛型里使用类类型
-function create<T>(c: {new(): T}): T {
+function create<T>(c: { new(): T }): T {
   return new c()
 }
 
@@ -74,7 +74,7 @@ class Bee extends Animal {
 class Lion extends Animal {
   keeper: ZooKeeper
 }
-function createInstance<A extends Animal>(c: new() => A): A {
+function createInstance<A extends Animal>(c: new () => A): A {
   return new c()
 }
 createInstance(Lion).keeper.nametag

@@ -38,7 +38,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/test.vue')
+      component: () => import('@/views/test/index.vue')
     },
     {
       path: '/use-vue',
@@ -90,7 +90,7 @@ const router = createRouter({
       path: '/theme-change',
       name: 'theme-change',
       component: () => import('@/views/theme-change/index.vue')
-    }
+    },
   ]
 })
 

@@ -5,6 +5,7 @@
       <div class="box" v-for="item in 100" :key="item">{{ item }}</div>
     </div>
   </div>
+  {{ lineWidth }}
   <div class="line" @mousedown="mousedownLine" ref="progressBar">
     <div
       class="main-line"
@@ -37,11 +38,13 @@ const getScrollTop = () => {
   lineWidth.value = line.value ? (line.value.scrollTop / divHeight) * 100 : 0
   left.value = (lineWidth.value * progressBar.value.offsetWidth) / 100 - 10
 }
-
 // 进度条中鼠标按下
 const mousedownLine = (e: MouseEvent) => {
-  console.log(e, e.clientX, '鼠标按下')
   left.value = e.clientX - 40
+  const divHeight = height.value && height.value.offsetHeight
+  if (!divHeight || !progressBar.value) return
+  console.log(line.value, 'line-mousedownLine======');
+  lineWidth.value = line.value ? (line.value.scrollTop / divHeight) * 100 : 0
 }
 
 // 进度条圆点中鼠标按下
@@ -69,7 +72,7 @@ const mousemoveCicle = (e: MouseEvent) => {
 }
 
 // 监听body中的鼠标抬起事件
-const mouseupEvent = useEventListener(bodyElement, 'mouseup', (evt) => {
+useEventListener(bodyElement, 'mouseup', (evt) => {
   // 注销鼠标移动监听事件
   console.log('鼠标抬起')
   mousemoveEvent.value()

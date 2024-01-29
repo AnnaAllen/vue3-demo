@@ -15,13 +15,13 @@ let list: number[] = [1, 2, 3]
 let list1: Array<number> = [1, 2, 3]
 
 // *  元组
-let x : [string, number]
+let x: [string, number]
 x = ['aaa', 10]
 
 // * 枚举 enum
 // 枚举可以由值，反过来找到名称
 enum str { aa, bb = 1 }
-let a: str = str.aa 
+let a: str = str.aa
 let strName: string = str[1]
 
 // * Any
@@ -34,12 +34,12 @@ notsure = 'message'
 notsure = false
 notsure.toFixed()
 
-let notsureList: any[] = [1, 'www', false] 
+let notsureList: any[] = [1, 'www', false]
 notsureList[1] = 100 // 还可以给string赋值number
 
 // * void
 // 函数没有任何返回时，其返回类型为void
-let voidFun = (): void => {}
+let voidFun = (): void => { }
 
 // * 断言
 // 下断言有两种形式，一种是尖括号，一种是as语法
@@ -60,7 +60,7 @@ interface labelValue {
 let printLabel = (labelObj: labelValue): void => {
   console.log(labelObj);
 }
-let myLabel = { name: 'charade', price: 395, id: 'shdjshdkj'}
+let myLabel = { name: 'charade', price: 395, id: 'shdjshdkj' }
 printLabel(myLabel)
 
 // * 2. 使用interface定义函数
@@ -87,7 +87,7 @@ interface test {
   readonly [index: string]: number
   length: number
 }
-let mytest: test = {'dsad': 1, length: 676}
+let mytest: test = { 'dsad': 1, length: 676 }
 
 // * 4. 描述类，强制一个类去符合某种契约
 interface ClockInterface {
@@ -95,7 +95,7 @@ interface ClockInterface {
 }
 class Clock implements ClockInterface {
   currentTime: Date;
-  
+
   setTime(d: Date) {
     this.currentTime = d // ts的严格类型检查，若不对变量进行初始化会报错
   }
@@ -105,7 +105,7 @@ class Clock implements ClockInterface {
 }
 
 interface ClockConstructor {
-  new (hour: number, minute: number): ClockInterface2
+  new(hour: number, minute: number): ClockInterface2
 }
 interface ClockInterface2 {
   tick(): any
@@ -114,13 +114,13 @@ const createClock = (ctor: ClockConstructor, hour: number, minute: number): Cloc
   return new ctor(hour, minute)
 }
 class DigitalClock implements ClockInterface2 {
-  constructor(h: number, m: number) {}
+  constructor(h: number, m: number) { }
   tick() {
     console.log('11111');
   }
 }
 class AnalogClock implements ClockInterface2 {
-  constructor(h: number, m: number) {}
+  constructor(h: number, m: number) { }
   tick() {
     console.log('wawawa');
   }
@@ -181,8 +181,8 @@ interface SelectableControl extends Control {
   select(): void
 }
 class Button extends Control implements SelectableControl {
-  select() {}
+  select() { }
 }
 class TextBox extends Control {
-  select() {}
+  select() { }
 }
